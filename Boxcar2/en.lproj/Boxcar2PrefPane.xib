@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.21"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GrowlBoxcar2PreferencePane">
+            <connections>
+                <outlet property="_window" destination="Hy0-SD-jIQ" id="MFJ-aI-FiW"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="Hy0-SD-jIQ">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="585" y="322" width="325" height="331"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <view key="contentView" id="nZI-vh-gCs">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="331"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-fD-n81">
+                        <rect key="frame" x="20" y="284" width="285" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ZOD-45-VrZ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.accessToken" id="J9W-y5-ojR"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mgd-yE-BaG">
+                        <rect key="frame" x="18" y="314" width="147" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Boxcar 2 Access Token" id="pw9-RS-6iJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.tokenLabel" id="giS-sz-JUl"/>
+                        </connections>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b0p-TF-dbW">
+                        <rect key="frame" x="36" y="230" width="103" height="26"/>
+                        <popUpButtonCell key="cell" type="push" title="Emergency" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="dD5-EF-Zm6" id="QCf-na-ACr">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="2iN-Hf-jRT">
+                                <items>
+                                    <menuItem title="Very Low" tag="-2" id="Jwl-od-8Eo">
+                                        <connections>
+                                            <binding destination="8hE-qc-cO4" name="value" keyPath="self.growlDisplayPriorityVeryLow" id="WZw-mX-a2U"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Moderate" tag="-1" id="laA-dS-1Ru">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="8hE-qc-cO4" name="value" keyPath="self.growlDisplayPriorityModerate" id="H4F-6s-gRO"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Normal" id="2h3-Cr-lcn">
+                                        <connections>
+                                            <binding destination="8hE-qc-cO4" name="value" keyPath="self.growlDisplayPriorityNormal" id="BoL-yL-0J2"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="High" tag="1" id="aFb-Gm-elq">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="8hE-qc-cO4" name="value" keyPath="self.growlDisplayPriorityHigh" id="Qu3-GE-GEk"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Emergency" state="on" tag="2" id="dD5-EF-Zm6">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <binding destination="8hE-qc-cO4" name="value" keyPath="self.growlDisplayPriorityEmergency" id="cNW-SD-6mP"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="-2" name="selectedTag" keyPath="minPriority" id="ZU5-z1-dRM"/>
+                            <binding destination="-2" name="enabled" keyPath="self.usePriority" id="xrg-mZ-Kkq"/>
+                        </connections>
+                    </popUpButton>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="51t-4x-3re">
+                        <rect key="frame" x="18" y="260" width="215" height="18"/>
+                        <buttonCell key="cell" type="check" title="Only send if priority is at least:" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="mdv-1L-ATL">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="title" keyPath="self.onlyIfPriorityLabel" id="XQ6-xS-UeP"/>
+                            <binding destination="-2" name="value" keyPath="self.usePriority" id="2Ry-Zk-IEe"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="aT0-Nf-pK0">
+                        <rect key="frame" x="18" y="197" width="124" height="18"/>
+                        <buttonCell key="cell" type="check" title="Only send if idle" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="b5s-Do-DLX">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="title" keyPath="self.onlyIfIdleLabel" id="9pR-rf-OMq"/>
+                            <binding destination="-2" name="value" keyPath="self.pushIdle" id="wbq-vb-3f0"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="6No-AS-z1w">
+                        <rect key="frame" x="18" y="177" width="175" height="18"/>
+                        <buttonCell key="cell" type="check" title="Prefix notifications with:" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="CBv-aq-dsH">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="title" keyPath="self.prefixLabel" id="llY-V8-7iv"/>
+                            <binding destination="-2" name="value" keyPath="self.usePrefix" id="o6j-dc-YeK"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9XM-L9-Vcy">
+                        <rect key="frame" x="38" y="149" width="267" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="q0O-ku-mDY"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bTz-Mi-SwA">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.prefixString" id="q4Z-hV-RCb"/>
+                            <binding destination="-2" name="enabled" keyPath="self.usePrefix" id="o4D-0A-mFc"/>
+                        </connections>
+                    </textField>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="DAw-EG-1Xq">
+                        <rect key="frame" x="289" y="314" width="16" height="16"/>
+                        <connections>
+                            <binding destination="-2" name="animate" keyPath="self.validating" id="EGU-2X-eBX"/>
+                            <binding destination="-2" name="hidden" keyPath="self.validating" id="dfu-q0-Htm">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </progressIndicator>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-D5-GpS">
+                        <rect key="frame" x="274" y="314" width="33" height="14"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Good" id="1Na-GJ-Bsb">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.errorMessage" id="fuh-Fe-FpL"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="51t-4x-3re" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="20" symbolic="YES" id="2Km-Pw-ROi"/>
+                    <constraint firstItem="b0p-TF-dbW" firstAttribute="top" secondItem="51t-4x-3re" secondAttribute="bottom" constant="8" id="2fH-W3-VP7"/>
+                    <constraint firstAttribute="trailing" secondItem="DAw-EG-1Xq" secondAttribute="trailing" constant="20" symbolic="YES" id="9VM-O1-oLd"/>
+                    <constraint firstItem="6No-AS-z1w" firstAttribute="top" secondItem="aT0-Nf-pK0" secondAttribute="bottom" constant="6" symbolic="YES" id="Bms-Mn-ocV"/>
+                    <constraint firstItem="6No-AS-z1w" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="20" symbolic="YES" id="EVB-kW-97D"/>
+                    <constraint firstItem="aT0-Nf-pK0" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="20" symbolic="YES" id="FoF-KB-v6K"/>
+                    <constraint firstItem="aT0-Nf-pK0" firstAttribute="top" secondItem="b0p-TF-dbW" secondAttribute="bottom" constant="20" id="GdF-as-LZc"/>
+                    <constraint firstAttribute="trailing" secondItem="AJe-fD-n81" secondAttribute="trailing" constant="20" symbolic="YES" id="IQ9-YI-oe7"/>
+                    <constraint firstAttribute="trailing" secondItem="9XM-L9-Vcy" secondAttribute="trailing" constant="20" symbolic="YES" id="LxV-Ui-VRP"/>
+                    <constraint firstAttribute="trailing" secondItem="2uw-D5-GpS" secondAttribute="trailing" constant="20" symbolic="YES" id="MUd-PO-viS"/>
+                    <constraint firstItem="b0p-TF-dbW" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="38" id="NJw-RX-zIo"/>
+                    <constraint firstItem="AJe-fD-n81" firstAttribute="top" secondItem="2uw-D5-GpS" secondAttribute="bottom" constant="8" symbolic="YES" id="V5U-Wg-kqo"/>
+                    <constraint firstItem="2uw-D5-GpS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mgd-yE-BaG" secondAttribute="trailing" constant="100" id="WQn-Ud-E5V"/>
+                    <constraint firstItem="AJe-fD-n81" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="20" symbolic="YES" id="YuW-6p-3Fj"/>
+                    <constraint firstItem="AJe-fD-n81" firstAttribute="top" secondItem="mgd-yE-BaG" secondAttribute="bottom" constant="8" symbolic="YES" id="dKJ-xC-aSa"/>
+                    <constraint firstItem="51t-4x-3re" firstAttribute="top" secondItem="AJe-fD-n81" secondAttribute="bottom" constant="8" symbolic="YES" id="dmP-0p-KoF"/>
+                    <constraint firstItem="9XM-L9-Vcy" firstAttribute="leading" secondItem="b0p-TF-dbW" secondAttribute="leading" id="gRN-Ae-WBs"/>
+                    <constraint firstItem="mgd-yE-BaG" firstAttribute="leading" secondItem="nZI-vh-gCs" secondAttribute="leading" constant="20" symbolic="YES" id="hfc-vx-nNK"/>
+                    <constraint firstItem="9XM-L9-Vcy" firstAttribute="top" secondItem="6No-AS-z1w" secondAttribute="bottom" constant="8" symbolic="YES" id="jt5-iw-6x3"/>
+                    <constraint firstItem="mgd-yE-BaG" firstAttribute="top" secondItem="nZI-vh-gCs" secondAttribute="top" id="pJh-f2-6DK"/>
+                    <constraint firstItem="AJe-fD-n81" firstAttribute="top" secondItem="DAw-EG-1Xq" secondAttribute="bottom" constant="8" symbolic="YES" id="sMd-sk-6ph"/>
+                </constraints>
+            </view>
+        </window>
+        <customObject id="8hE-qc-cO4" customClass="GrowlPluginPreferenceStrings"/>
+    </objects>
+</document>

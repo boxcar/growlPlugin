@@ -1,0 +1,14 @@
+/****************************************************************************/
+/* Localization file */
+
+
+"Boxcar 2 Access Token:" = "Boxcar 2 Access Token:";
+"Only send if priority is at least:" = "Only send if priority is at least:";
+"Only send if idle:" = "Only send if idle:";
+"Prefix notifications with:" = "Prefix notifications with:";
+"Registered!" = "Registered!";
+"Invalid Email" = "Invalid Email";
+"Unknown email" = "Unknown email";
+"Valid token!" = "Valid token!";
+"Invalid token" = "Invalid token";
+"Valid token, no device" = "Valid token, no device";
